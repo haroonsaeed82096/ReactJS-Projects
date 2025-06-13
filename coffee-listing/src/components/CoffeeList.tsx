@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
-
-// interface Coffee {
-//   id: number;
-//   name: string;
-//   image: string;
-// }
-
+import CoffeeCard from "./CoffeeCard";
 const CoffeeList = () => {
   const [coffeeList, setCoffeeList] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,18 +23,7 @@ const CoffeeList = () => {
     return <div>Loading...</div>;
   }
 
-  return (
-    <div>
-      <h1>Coffee List</h1>
-      <ul>
-        {coffeeList.map((coffee: any) => (
-          <>
-            <li key={coffee.id}>{coffee.name}</li>
-          </>
-        ))}
-      </ul>
-    </div>
-  );
+  return <CoffeeCard coffeeList={coffeeList} />;
 };
 
 export default CoffeeList;
