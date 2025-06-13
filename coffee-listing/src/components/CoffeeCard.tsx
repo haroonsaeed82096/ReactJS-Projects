@@ -15,13 +15,11 @@ export default function CoffeeCard(props: { coffeeList: Coffee[] }) {
       {coffeeList.map((coffee: Coffee) => {
         return (
           <div key={coffee.id}>
-            <h2>{coffee.name}</h2>
             <img src={coffee.image} alt={coffee.name} />
+            <p className="bg-red-200">{coffee.name}</p>
             <p>{coffee.price}</p>
             <p>{coffee.rating}</p>
             <p>{coffee.votes}</p>
-            <p>{coffee.popular}</p>
-            <p>{coffee.available}</p>
           </div>
         );
       })}
