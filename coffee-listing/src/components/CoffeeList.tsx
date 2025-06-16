@@ -23,7 +23,11 @@ const CoffeeList = () => {
     return <div>Loading...</div>;
   }
 
-  return <CoffeeCard coffeeList={coffeeList} />;
+  return (
+    <>
+      <CoffeeCard coffeeList={coffeeList} />;
+    </>
+  );
 };
 
 export default CoffeeList;
