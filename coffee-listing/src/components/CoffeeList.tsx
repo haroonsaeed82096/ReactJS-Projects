@@ -5,9 +5,7 @@ const CoffeeList = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json"
-    )
+    fetch("/data.json")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -18,7 +16,6 @@ const CoffeeList = () => {
         console.error(error);
       });
   }, []);
-  console.log(coffeeList[0], "coffeeList");
   if (isLoading) {
     return <div>Loading...</div>;
   }
